@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Replace the base URL before deploy.
+  Example: https://your-domain.example
+  Keep trailing paths relative to that origin.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>./</loc>
+  </url>
+  <url>
+    <loc>./tools/e-liquid.html</loc>
+  </url>
+  <url>
+    <loc>./tools/ohms-law.html</loc>
+  </url>
+  <url>
+    <loc>./about.html</loc>
+  </url>
+  <url>
+    <loc>./disclaimer.html</loc>
+  </url>
+</urlset>

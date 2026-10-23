@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ohm's Law Calculator — Vapor</title>
+    <meta
+      name="description"
+      content="Calculate voltage, current, resistance and power from any valid pair. Ideal resistive DC circuit model."
+    />
+    <link rel="canonical" href="./ohms-law.html" />
+    <meta property="og:title" content="Ohm's Law Calculator — Vapor" />
+    <meta
+      property="og:description"
+      content="Calculate voltage, current, resistance and power for an ideal resistive circuit."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="./ohms-law.html" />
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Vapor" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/calculators.css" />
+    <script src="../assets/js/theme-init.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="logo" href="../">Vapor</a>
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" data-nav-link href="./e-liquid.html">E-Liquid</a>
+            </li>
+            <li>
+              <a class="nav__link" data-nav-link href="./ohms-law.html">Ohm's Law</a>
+            </li>
+            <li>
+              <a class="nav__link" data-nav-link href="../about.html">About</a>
+            </li>
+            <li>
+              <a
+                class="nav__link nav__link--icon"
+                href="https://github.com/GiorgioReale/vapor"
+                rel="noopener noreferrer"
+                ><span class="icon icon--sm icon--github" aria-hidden="true"></span>GitHub</a
+              >
+            </li>
+          </ul>
+          <div class="nav__actions">
+            <button
+              type="button"
+              class="icon-button theme-toggle"
+              data-theme-toggle
+              aria-label="Toggle color theme"
+            >
+              <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" />
+              </svg>
+              <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="icon-button nav-toggle"
+              data-nav-toggle
+              aria-expanded="false"
+              aria-controls="mobile-nav"
+              aria-label="Open menu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-panel" id="mobile-nav" data-nav-panel>
+        <ul class="nav-panel__list">
+          <li><a class="nav-panel__link" href="./e-liquid.html">E-Liquid Calculator</a></li>
+          <li><a class="nav-panel__link" href="./ohms-law.html">Ohm's Law Calculator</a></li>
+          <li><a class="nav-panel__link" href="../about.html">About</a></li>
+          <li>
+            <a
+              class="nav-panel__link"
+              href="https://github.com/GiorgioReale/vapor"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main" class="site-main">
+      <div class="container" data-ohms-root>
+        <h1 class="page-title page-title--with-icon">
+          <span class="icon-badge" aria-hidden="true">
+            <span class="icon icon--bolt"></span>
+          </span>
+          Ohm's Law Calculator
+        </h1>
+        <p class="page-lead">
+          Calculate voltage, current, resistance and power from any valid pair of
+          known values.
+        </p>
+
+        <div class="calc-layout">
+          <section class="calc-panel" aria-labelledby="inputs-title">
+            <div class="calc-panel__header">
+              <div>
+                <h2 id="inputs-title" class="calc-panel__title">
+                  <span class="icon icon--sm icon--sliders" aria-hidden="true"></span>
+                  Inputs
+                </h2>
+                <p class="calc-panel__subtitle">Choose two known values.</p>
+              </div>
+            </div>
+
+            <form class="calc-form" data-ohms-form novalidate>
+              <fieldset class="fieldset">
+                <legend class="fieldset__legend">Known values</legend>
+                <div class="pair-selector">
+                  <label class="pair-option">
+                    <input type="radio" name="pair" value="VI" />
+                    <span>Voltage + Current</span>
+                  </label>
+                  <label class="pair-option">
+                    <input type="radio" name="pair" value="VR" checked />
+                    <span>Voltage + Resistance</span>
+                  </label>
+                  <label class="pair-option">
+                    <input type="radio" name="pair" value="VP" />
+                    <span>Voltage + Power</span>
+                  </label>
+                  <label class="pair-option">
+                    <input type="radio" name="pair" value="IR" />
+                    <span>Current + Resistance</span>
+                  </label>
+                  <label class="pair-option">
+                    <input type="radio" name="pair" value="IP" />
+                    <span>Current + Power</span>
+                  </label>
+                  <label class="pair-option">
+                    <input type="radio" name="pair" value="RP" />
+                    <span>Resistance + Power</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="calc-form__section">
+                <h3 class="calc-form__section-title">Values</h3>
+
+                <div class="field" data-field="voltage">
+                  <label class="field__label" for="voltage"
+                    >Voltage <span class="unit">(V)</span></label
+                  >
+                  <input
+                    class="input"
+                    id="voltage"
+                    name="voltage"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="any"
+                  />
+                </div>
+
+                <div class="field" data-field="current" hidden>
+                  <label class="field__label" for="current"
+                    >Current <span class="unit">(A)</span></label
+                  >
+                  <input
+                    class="input"
+                    id="current"
+                    name="current"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="any"
+                    disabled
+                  />
+                </div>
+
+                <div class="field" data-field="resistance">
+                  <label class="field__label" for="resistance"
+                    >Resistance <span class="unit">(Ω)</span></label
+                  >
+                  <input
+                    class="input"
+                    id="resistance"
+                    name="resistance"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="any"
+                  />
+                </div>
+
+                <div class="field" data-field="power" hidden>
+                  <label class="field__label" for="power"
+                    >Power <span class="unit">(W)</span></label
+                  >
+                  <input
+                    class="input"
+                    id="power"
+                    name="power"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="any"
+                    disabled
+                  />
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <section class="calc-panel calc-results" aria-labelledby="results-title">
+            <div class="calc-panel__header">
+              <div>
+                <h2 id="results-title" class="calc-panel__title">
+                  <span class="icon icon--sm icon--chart" aria-hidden="true"></span>
+                  Results
+                </h2>
+                <p class="calc-panel__subtitle">Inputs and calculated values are marked.</p>
+              </div>
+            </div>
+
+            <div
+              class="alert alert--danger"
+              data-calc-alert
+              role="alert"
+              hidden
+            ></div>
+
+            <p class="result-empty" data-results-empty>Enter two valid values to see results.</p>
+
+            <div data-results-content hidden>
+              <ul class="result-list">
+                <li class="result-item" data-result-item="voltage">
+                  <span class="result-item__label">Voltage</span>
+                  <span class="result-item__value" data-result="voltage">—</span>
+                </li>
+                <li class="result-item" data-result-item="current">
+                  <span class="result-item__label">Current</span>
+                  <span class="result-item__value" data-result="current">—</span>
+                </li>
+                <li class="result-item" data-result-item="resistance">
+                  <span class="result-item__label">Resistance</span>
+                  <span class="result-item__value" data-result="resistance">—</span>
+                </li>
+                <li class="result-item" data-result-item="power">
+                  <span class="result-item__label">Power</span>
+                  <span class="result-item__value" data-result="power">—</span>
+                </li>
+              </ul>
+
+              <div class="formulas-used">
+                <h3 class="formulas-used__title">Formulas used</h3>
+                <ul class="formulas-used__list" data-formulas-used></ul>
+              </div>
+            </div>
+
+            <div class="calc-actions">
+              <button type="button" class="button button--secondary" data-reset>
+                <span class="icon icon--sm icon--reset" aria-hidden="true"></span>
+                Reset
+              </button>
+              <button type="button" class="button" data-copy-results disabled>
+                <span class="icon icon--sm icon--copy" aria-hidden="true"></span>
+                Copy results
+              </button>
+            </div>
+            <p class="copy-feedback" data-copy-feedback aria-live="polite"></p>
+
+            <p class="calc-note">
+              These calculations assume an ideal resistive circuit and do not
+              replace battery safety checks. See the
+              <a href="../disclaimer.html">disclaimer</a>.
+            </p>
+          </section>
+        </div>
+
+        <section class="how-it-works" aria-labelledby="how-title">
+          <h2 id="how-title" class="section-title">How it works</h2>
+          <p class="page-lead">
+            For an ideal resistive DC circuit, voltage, current, resistance and
+            power are related by Ohm's law and the power equations below.
+          </p>
+          <div class="how-it-works__grid">
+            <article class="formula-card">
+              <h3 class="formula-card__title">Voltage</h3>
+              <p class="formula-card__formula">V = I × R</p>
+            </article>
+            <article class="formula-card">
+              <h3 class="formula-card__title">Current</h3>
+              <p class="formula-card__formula">I = V ÷ R</p>
+            </article>
+            <article class="formula-card">
+              <h3 class="formula-card__title">Resistance</h3>
+              <p class="formula-card__formula">R = V ÷ I</p>
+            </article>
+            <article class="formula-card">
+              <h3 class="formula-card__title">Power</h3>
+              <p class="formula-card__formula">P = V × I · P = V² ÷ R · P = I² × R</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="sr-status" data-sr-status aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">Vapor</div>
+        <ul class="site-footer__links">
+          <li>
+            <a href="https://github.com/GiorgioReale/vapor" rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../disclaimer.html">Disclaimer</a></li>
+          <li>
+            <a href="https://github.com/GiorgioReale/vapor/blob/main/LICENSE" rel="noopener noreferrer"
+              >MIT License</a
+            >
+          </li>
+        </ul>
+        <p class="site-footer__note">Free, open-source calculators. Calculations run locally.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/ohms-law.js"></script>
+  </body>
+</html>

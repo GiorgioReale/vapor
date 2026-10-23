@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Replace EXAMPLE with your deployed origin before going live, e.g.:
+# Sitemap: https://example.com/sitemap.xml
+Sitemap: ./sitemap.xml

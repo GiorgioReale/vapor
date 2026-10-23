@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found — Vapor</title>
+    <meta
+      name="description"
+      content="The page you requested could not be found on Vapor."
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Vapor" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/theme-init.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="logo" href="./">Vapor</a>
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="./tools/e-liquid.html">E-Liquid</a>
+            </li>
+            <li>
+              <a class="nav__link" href="./tools/ohms-law.html">Ohm's Law</a>
+            </li>
+            <li>
+              <a class="nav__link" href="./about.html">About</a>
+            </li>
+            <li>
+              <a
+                class="nav__link nav__link--icon"
+                href="https://github.com/GiorgioReale/vapor"
+                rel="noopener noreferrer"
+                ><span class="icon icon--sm icon--github" aria-hidden="true"></span>GitHub</a
+              >
+            </li>
+          </ul>
+          <div class="nav__actions">
+            <button
+              type="button"
+              class="icon-button theme-toggle"
+              data-theme-toggle
+              aria-label="Toggle color theme"
+            >
+              <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" />
+              </svg>
+              <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="icon-button nav-toggle"
+              data-nav-toggle
+              aria-expanded="false"
+              aria-controls="mobile-nav"
+              aria-label="Open menu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-panel" id="mobile-nav" data-nav-panel>
+        <ul class="nav-panel__list">
+          <li><a class="nav-panel__link" href="./tools/e-liquid.html">E-Liquid Calculator</a></li>
+          <li><a class="nav-panel__link" href="./tools/ohms-law.html">Ohm's Law Calculator</a></li>
+          <li><a class="nav-panel__link" href="./about.html">About</a></li>
+          <li>
+            <a
+              class="nav-panel__link"
+              href="https://github.com/GiorgioReale/vapor"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main" class="site-main">
+      <div class="container error-page">
+        <p class="error-page__code">Error 404</p>
+        <h1 class="page-title">Page not found</h1>
+        <p class="page-lead">
+          The page you requested does not exist or may have moved.
+        </p>
+        <div class="button-group">
+          <a class="button" href="./">Back to home</a>
+          <a class="button button--secondary" href="./tools/e-liquid.html"
+            >E-Liquid Calculator</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">Vapor</div>
+        <ul class="site-footer__links">
+          <li>
+            <a href="https://github.com/GiorgioReale/vapor" rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./disclaimer.html">Disclaimer</a></li>
+          <li>
+            <a href="https://github.com/GiorgioReale/vapor/blob/main/LICENSE" rel="noopener noreferrer"
+              >MIT License</a
+            >
+          </li>
+        </ul>
+        <p class="site-footer__note">Free, open-source calculators. Calculations run locally.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>
